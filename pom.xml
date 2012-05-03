@@ -51,7 +51,7 @@
         <dependency>
             <groupId>android.support</groupId>
             <artifactId>compatibility-v4</artifactId>
-            <version>r6</version>
+            <version>r8</version>
         </dependency>
 
             
@@ -72,6 +72,24 @@
             <groupId>de.akquinet.android.androlog</groupId>
             <artifactId>androlog</artifactId>
             <version>1.0.5</version>
+        </dependency>
+        
+        <!-- HTTP Client & Co -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient-cache</artifactId>
+            <version>4.1.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.codeartisans</groupId>
+            <artifactId>java-toolbox</artifactId>
+            <version>1.5</version>
         </dependency>
 
     </dependencies>
