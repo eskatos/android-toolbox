@@ -10,7 +10,7 @@
 
     <groupId>org.codeartisans.android-toolbox</groupId>
     <artifactId>android-toolbox</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2</version>
 
     <name>${project.artifactId}</name>
     <packaging>jar</packaging>
