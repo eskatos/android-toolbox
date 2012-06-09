@@ -16,11 +16,12 @@
 package org.codeartisans.android.toolbox.os;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
 import android.os.AsyncTask;
+
+import org.codeartisans.java.toolbox.Strings;
 
 /**
  * Generic {@link AsyncTask} result wrapper that provides error handling.
@@ -47,14 +48,14 @@ public class AsyncTaskResult<ResultType, ErrorType extends Throwable>
 
     public AsyncTaskResult( ResultType result, ErrorType... errors )
     {
-        this( result, Arrays.asList( errors ) );
+        this( result, sanitizeNulls( errors ) );
     }
 
     public AsyncTaskResult( ResultType result, Collection<ErrorType> errors )
     {
         super();
         this.result = result;
-        if ( errors != null ) {
+        if ( errors != null && !errors.isEmpty() ) {
             this.errors.addAll( errors );
         }
     }
@@ -72,6 +73,38 @@ public class AsyncTaskResult<ResultType, ErrorType extends Throwable>
     public List<ErrorType> getErrors()
     {
         return errors;
+    }
+
+    public CharSequence buildErrorMessages()
+    {
+        if ( !hasError() ) {
+            return Strings.EMPTY;
+        }
+        StringBuilder sb = new StringBuilder();
+        for ( ErrorType ex : errors ) {
+            sb.append( ex.getMessage() ).append( Strings.NEWLINE );
+        }
+        return sb;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "AsyncTaskResult[" + "result=" + result + ", errors=" + errors + ']';
+    }
+
+    private static <T> Collection<T> sanitizeNulls( T... errors )
+    {
+        if ( errors == null || errors.length <= 0 ) {
+            return null;
+        }
+        List<T> temp = new ArrayList<T>();
+        for ( T error : errors ) {
+            if ( error != null ) {
+                temp.add( error );
+            }
+        }
+        return temp.isEmpty() ? null : temp;
     }
 
 }
