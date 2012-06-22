@@ -15,21 +15,29 @@
  */
 package org.codeartisans.android.toolbox.activity.event;
 
-import android.view.Menu;
+import android.os.Bundle;
 
-public class OnOptionsMenuClosedEvent
+public class OnCreateDialogEvent
 {
 
-    protected Menu menu;
+    protected int id;
 
-    public OnOptionsMenuClosedEvent( Menu menu )
+    protected Bundle args;
+
+    public OnCreateDialogEvent( int id, Bundle args )
     {
-        this.menu = menu;
+        this.id = id;
+        this.args = args;
     }
 
-    public Menu getMenu()
+    public int getId()
     {
-        return menu;
+        return id;
+    }
+
+    public Bundle getArgs()
+    {
+        return args;
     }
 
 }

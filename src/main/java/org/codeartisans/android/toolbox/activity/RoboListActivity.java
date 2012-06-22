@@ -1,5 +1,5 @@
 /*
- * Copyright 2012 paul.
+ * Copyright 2012 Paul Merlin.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,12 @@
  */
 package org.codeartisans.android.toolbox.activity;
 
+import android.app.Dialog;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import org.codeartisans.android.toolbox.activity.event.OnCreateDialogEvent;
 import org.codeartisans.android.toolbox.activity.event.OnCreateOptionsMenuEvent;
 import org.codeartisans.android.toolbox.activity.event.OnOptionsItemSelectedEvent;
 import org.codeartisans.android.toolbox.activity.event.OnOptionsMenuClosedEvent;
@@ -47,6 +50,26 @@ public class RoboListActivity
     {
         super.onOptionsMenuClosed( menu );
         eventManager.fire( new OnOptionsMenuClosedEvent( menu ) );
+    }
+
+    @Override
+    protected Dialog onCreateDialog( int id )
+    {
+        Dialog result = super.onCreateDialog( id );
+        if ( result == null ) {
+            eventManager.fire( new OnCreateDialogEvent( id, null ) );
+        }
+        return result;
+    }
+
+    @Override
+    protected Dialog onCreateDialog( int id, Bundle args )
+    {
+        Dialog result = super.onCreateDialog( id, args );
+        if ( result == null ) {
+            eventManager.fire( new OnCreateDialogEvent( id, args ) );
+        }
+        return result;
     }
 
 }

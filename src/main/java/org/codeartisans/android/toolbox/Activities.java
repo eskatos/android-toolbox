@@ -13,23 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.codeartisans.android.toolbox.activity.event;
+package org.codeartisans.android.toolbox;
 
-import android.view.Menu;
-
-public class OnOptionsMenuClosedEvent
+public class Activities
 {
 
-    protected Menu menu;
-
-    public OnOptionsMenuClosedEvent( Menu menu )
+    private Activities()
     {
-        this.menu = menu;
-    }
-
-    public Menu getMenu()
-    {
-        return menu;
     }
 
 }
