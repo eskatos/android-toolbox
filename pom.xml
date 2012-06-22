@@ -13,7 +13,7 @@
     <version>1.4-SNAPSHOT</version>
 
     <name>${project.artifactId}</name>
-    <packaging>jar</packaging>
+    <packaging>apklib</packaging>
     <url>http://github.com/eskatos/android-toolbox</url>
 
     <licenses>
@@ -93,5 +93,16 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+                <version>3.2.0</version>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
