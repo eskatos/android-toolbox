@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="black">#000</color>
+    <color name="white">#fff</color>
+
+    <!-- Android Color Swatches -->
+    
+    <color name="android.grey">#dcdcdc</color>
+    <color name="android.grey_strong">#bbbdbd</color>
+    
+    
+    <color name="android.blue">#33B5E5</color>
+    <color name="android.blue_strong">#0099CC</color>
+
+    <color name="android.purple">#AA66CC</color>
+    <color name="android.purple_strong">#9933CC</color>
+
+    <color name="android.green">#99CC00</color>
+    <color name="android.green_strong">#669900</color>
+
+    <color name="android.orange">#FFBB33</color>
+    <color name="android.orange_strong">#FF8800</color>
+
+    <color name="android.red">#FF4444</color>
+    <color name="android.red_strong">#CC0000</color>    
+    
+</resources>
