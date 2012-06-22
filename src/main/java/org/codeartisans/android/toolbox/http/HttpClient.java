@@ -1,5 +1,5 @@
 /*
- * Copyright 2012 paul.
+ * Copyright 2012 Paul Merlin.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package org.codeartisans.android.toolbox.http;
 
-import java.io.File;
 import java.io.IOException;
 
 import android.content.Context;
@@ -33,8 +32,6 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.conn.ClientConnectionManager;
-import org.apache.http.impl.client.cache.CacheConfig;
-import org.apache.http.impl.client.cache.CachingHttpClient;
 import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HttpContext;
 
@@ -69,6 +66,7 @@ public class HttpClient
 
             AndroidHttpClient androidClient = AndroidHttpClient.newInstance( httpUtils.getUserAgent(), context );
 
+/* TODO Fix HttpClient headache.
             if ( httpCacheSize > 0 ) {
 
                 CacheConfig cacheConfig = new CacheConfig();
@@ -77,10 +75,13 @@ public class HttpClient
                 delegateHttpClient = cachingClient;
 
             } else {
-
+*/
+            
                 delegateHttpClient = androidClient;
 
+/* TODO Fix HttpClient headache.
             }
+ */
         }
         return delegateHttpClient;
     }

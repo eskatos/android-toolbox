@@ -1,5 +1,5 @@
 /*
- * Copyright 2012 paul.
+ * Copyright 2012 Paul Merlin.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package org.codeartisans.android.toolbox.http;
 
+/* TODO Fix HttpClient headache.
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -29,13 +30,17 @@ import org.apache.http.client.cache.HttpCacheUpdateException;
 import org.apache.http.impl.client.cache.CacheConfig;
 import org.codeartisans.java.toolbox.io.Files;
 import org.codeartisans.java.toolbox.io.IO;
+*/
 
 /**
  * TODO Limit cache size: find a viable strategy balancing size coercion and performance.
  */
 public class FileHttpCacheStorage
+/* TODO Fix HttpClient headache.
         implements HttpCacheStorage
+*/
 {
+/* TODO Fix HttpClient headache.
 
     private final CacheConfig cacheConfig;
 
@@ -136,5 +141,5 @@ public class FileHttpCacheStorage
         }
         return cacheDir;
     }
-
+*/
 }
