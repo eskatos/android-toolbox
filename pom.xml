@@ -61,11 +61,6 @@
             <artifactId>roboguice</artifactId>
             <version>2.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.google.code.findbugs</groupId>
-            <artifactId>jsr305</artifactId>
-            <version>2.0.0</version>
-        </dependency>
 
         <!-- Androlog is a logging and reporting library for Android -->
         <dependency>
@@ -75,6 +70,7 @@
         </dependency>
         
         <!-- HTTP Client & Co -->
+        <!--
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient-cache</artifactId>
@@ -86,6 +82,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        -->
         <dependency>
             <groupId>org.codeartisans</groupId>
             <artifactId>java-toolbox</artifactId>
